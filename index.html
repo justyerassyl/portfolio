@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My portfolio</title>
+    <link rel="stylesheet" href="indesigner.css">
+<style>
+    .stroke {
+        font: 'Trebuchet MS', sans-serif;
+        text-shadow: black 0 0 2px;
+    }
+</style>
+</head>
+
+<body>
+    <header>
+        <div id="logo" onclick="slowScroll('#top')">
+            <span>my portfolio</span>
+        </div>
+        <div id="about">
+            <a href="https://github.com/justyerassyl" title="Возможности" onclick="slowScroll('#main')">my GitHub</a>
+            <a href="https://vk.com/yerassylk" onclick="slowScroll('#contacts')" title="Контакты">VK</a>
+            <a href="https://www.instagram.com/justyerassyl/" onclick="slowScroll('#faq')" title="Ответы на вопросы">instagram</a>
+        </div>
+    </header>
+
+    <div id="top">
+        <h1>Мое портфолио</h1>
+        <h3>интерьер & экстерьер дизайнера</h3>
+    </div>
+
+    <div id="main">
+        <div class="intro">
+            <h2>Кто я?</h2>
+            <span>если кратко о себе</span>
+        </div>
+        <div class="text">
+            <span>Начинайщий специалист, 3D визуализатор, стремлюсь набраться опыта, готов к новым вызовам, 
+                обладаю навыками 3Ds Max, Corona Render. Знаком с Adobe Photoshop и AutoCad на начальном уровне(пока что)</span>
+        </div>
+    </div>
+
+    <div id="overview">
+        <h2>Мои сцены</h2>
+        <h4>3Ds Max + Corona Render</h4>
+
+        <div class="img">
+            <img src="bedroom.jpg" alt="">
+            <span>the bedroom</span>
+            <h3 class="stroke"><i>Мой самый первый проект. Здесь я хотел создать сцену наподобие европейского стиля</i></h3>
+        </div>
+        <div class="img">
+            <img src="hall.jpg" alt="">
+            <span>the living room</span>
+        </div>
+        <div class="img">
+            <img src="outside.jpg" alt="">
+            <span>an exterior</span>
+        </div>
+        <div class="img">
+            <img src="koridor.jpg" alt="">
+            <span>the corridor</span>
+            <h3 class="stroka"><i>Моя любимая сцена. Встроенный шкаф, много освещения, уютно</i></h3>
+        </div>
+        <div class="img">
+            <img src="haitek.JPG" alt="">
+            <span>hi-tech style</span><i>Экстерьер сцена в стиле хай-тек</i>
+        </div>
+        <div class="img">
+            <img src="mybedroom.JPG" alt="">
+            <span>my bedroom</span>
+            <h3 class="stroke"><i>Дизайн моей комнаты. Замерил и визуализировал</i></h3>
+        </div>
+        <div class="img">
+            <img src="tas1.JPG" alt="">
+            <span>the monument 1</span>
+            <h3 class="stroke"><i>Замерил и визуализировал. Надо было повторить</i></h3>
+        </div>
+        <div class="img">
+            <img src="tas2.JPG" alt="">
+            <span>the monument 2</span>
+            <h3 class="stroke"><i>Тот же проект, но с другой стороны</i></h3>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        function slowScroll(id) {
+            $('body').animate({
+                scrollTop: $(id).offset().top
+            }, 500);
+        }
+
+        $(document).on("scroll", function() {
+            if($(window).scrollTop() === 0)
+                $("header").removeClass("fixed");
+            else
+                $("header").attr("class", "fixed");   
+        })
+    </script>
+</body>
+</html>
